@@ -1,0 +1,77 @@
+![Duoc UC](https://www.duoc.cl/wp-content/uploads/2022/09/logo-0.png)
+# 🧠 Actividad Formativa 1 – Desarrollo Orientado a Objetos II
+
+## 💻 Proyecto: SpeedFast
+## 👤 Autor del proyecto
+- **Nombre completo:** Javier Rojas
+- **Sección:** PRY2203-001A
+- **Carrera:** Analista Programador Computacional
+- **Sede:** Online
+
+---
+
+## 📘 Descripción general del sistema
+Este proyecto da respuesta a la Actividad Formativa 1 de la asignatura 
+*Desarrollo Orientado a Objetos II*. En la propuesta se desarrolla una 
+clase base (superclase) Pedido y 3 subclases PedidoComida, PedidoExpress,
+ PedidoEncomienda; que sobreescriben el método asignarRepartidor y lo sobrecargan
+con atributos propios. Adicionalmente se implementa una clase Main que
+crea instancias de cada subclase y genera resultado en consola a partir
+de los métodos sobreescritos y sobrecargados de cada objeto creado.
+
+El sistema creado se organiza en paquetes, aplica principios de herencia 
+(Pedido -> PedidoComida, PedidoExpress, PedidoEncomienda),
+composición (clase Dirección), encapsulamiento (atributos privados y 
+métodos getter/setter), polimorfismo (sobreescritura y sobrecarga de métodos)
+y mantiene documentación de código usando Javadocs.
+
+---
+
+## 🧱 Estructura general del proyecto
+
+```plaintext
+docs
+└── index.html
+src
+├── data
+├── model
+│   ├── Direccion.java
+│   ├── Pedido.java
+│   ├── PedidoComida.java
+│   ├── PedidoEncomienda.java
+│   └── PedidoExpress.java
+└── ui
+    └── Main.java
+````
+
+---
+
+
+
+## ⚙️ Instrucciones para clonar y ejecutar el proyecto
+
+1. Clone el repositorio desde GitHub:
+
+```bash
+git clone https://github.com/jweb93/DuocUC-POO2-AF1.git
+```
+
+2. Abra el proyecto en IntelliJ IDEA.
+
+3. Ejecute el archivo `Main.java` desde el paquete `ui`.
+
+4. Puede revisar la documentación del código accediendo al
+archivo `docs/index.html`
+
+---
+
+**Repositorio GitHub:** https://github.com/jweb93/DuocUC-POO2-AF1
+**Fecha de entrega:** \[12/08/2026]
+
+---
+
+© Duoc UC | Escuela de Informática y Telecomunicaciones 
+
+
+
+
