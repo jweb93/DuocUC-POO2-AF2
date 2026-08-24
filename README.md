@@ -1,5 +1,5 @@
 ![Duoc UC](https://www.duoc.cl/wp-content/uploads/2022/09/logo-0.png)
-# 🧠 Actividad Formativa 1 – Desarrollo Orientado a Objetos II
+# 🧠 Actividad Formativa 2 – Desarrollo Orientado a Objetos II
 
 ## 💻 Proyecto: SpeedFast
 ## 👤 Autor del proyecto
@@ -53,7 +53,7 @@ src
 1. Clone el repositorio desde GitHub:
 
 ```bash
-git clone https://github.com/jweb93/DuocUC-POO2-AF1.git
+git clone https://github.com/jweb93/DuocUC-POO2-AF2.git
 ```
 
 2. Abra el proyecto en IntelliJ IDEA.
@@ -65,8 +65,8 @@ archivo `docs/index.html`
 
 ---
 
-**Repositorio GitHub:** https://github.com/jweb93/DuocUC-POO2-AF1
-**Fecha de entrega:** \[12/08/2026]
+**Repositorio GitHub:** https://github.com/jweb93/DuocUC-POO2-AF2
+**Fecha de entrega:** \[24/08/2026]
 
 ---
 
