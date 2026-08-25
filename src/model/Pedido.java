@@ -4,19 +4,20 @@ package model;
  * Representa un pedido que debe ser entregado a una dirección
  */
 
-public class Pedido {
+public abstract class  Pedido {
     private int idPedido;
     private Direccion direccionEntrega;
-    private String tipoPedido;
+    private double distanciaKM;
 
-    // Constructor
-    public Pedido(int idPedido, Direccion direccionEntrega, String tipoPedido) {
+    public Pedido(int idPedido, Direccion direccionEntrega, double distanciaKM) {
         this.idPedido = idPedido;
         this.direccionEntrega = direccionEntrega;
-        this.tipoPedido = tipoPedido;
+        this.distanciaKM = distanciaKM;
     }
 
-    // Getter and Setters
+// Getter and Setters
+
+
     public int getIdPedido() {
         return idPedido;
     }
@@ -33,18 +34,23 @@ public class Pedido {
         this.direccionEntrega = direccionEntrega;
     }
 
+    public double getDistanciaKM() {
+        return distanciaKM;
+    }
+
+    public void setDistanciaKM(double distanciaKM) {
+        this.distanciaKM = distanciaKM;
+    }
+
     // Método base
-    public String getTipoPedido() {
-        return tipoPedido;
+    public void mostrarResumen(){
+        System.out.println("Pedido N°: " + idPedido);
+        System.out.println("Destino: " + direccionEntrega);
+        System.out.println("Distancia (km): " + distanciaKM);
+        System.out.println("Tiempo (min): " + calcularTiempoEntrega());
     }
 
-    public void setTipoPedido(String tipoPedido) {
-        this.tipoPedido = tipoPedido;
-    }
-
-    public void asignarRepartidor(){
-        System.out.println("[Pedido]");
-        System.out.println("Buscando un repartidor para llevar su pedido");;
-    }
+    // Método abstracto
+    public abstract int calcularTiempoEntrega();
 }
 

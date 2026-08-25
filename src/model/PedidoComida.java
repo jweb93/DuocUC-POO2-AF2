@@ -9,8 +9,8 @@ public class PedidoComida extends Pedido{
     private boolean caliente;
 
     // Constructor
-    public PedidoComida(int idPedido, Direccion direccionEntrega, String tipoPedido, boolean caliente) {
-        super(idPedido, direccionEntrega, tipoPedido);
+    public PedidoComida(int idPedido, Direccion direccionEntrega, double distanciaKM, boolean caliente) {
+        super(idPedido, direccionEntrega, distanciaKM);
         this.caliente = caliente;
     }
 
@@ -23,20 +23,20 @@ public class PedidoComida extends Pedido{
         this.caliente = caliente;
     }
 
+
+    // Implementación del método abstracto
+    @Override
+    public int calcularTiempoEntrega(){
+        return (int) Math.round(15 + (2 * getDistanciaKM()));
+    }
+
     // Sobreescritura
     @Override
-    public void asignarRepartidor(){
-        System.out.println("[Pedido Comida]");
-        System.out.println("Buscando un repartidor para llevar su comida 🍲");
-
+    public void mostrarResumen(){
+        System.out.println("Pedido Comida N°: " + getIdPedido());
+        System.out.println("Destino: " + getDireccionEntrega());
+        System.out.println("Distancia (km): " + getDistanciaKM());
+        System.out.println("Tiempo (min): " + calcularTiempoEntrega());
     }
 
-    // Sobrecarga
-    public void asignarRepartidor(String nombreRepartidor){
-        System.out.print(nombreRepartidor + " llevará su(s) " + getTipoPedido());
-        if(isCaliente()){
-            System.out.println(" caliente(s)");
-        }
-        System.out.println();
-    }
 }

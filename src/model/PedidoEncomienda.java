@@ -8,8 +8,8 @@ public class PedidoEncomienda extends Pedido{
     private boolean fragil;
 
     // Constructor
-    public PedidoEncomienda(int idPedido, Direccion direccionEntrega, String tipoPedido, boolean fragil) {
-        super(idPedido, direccionEntrega, tipoPedido);
+    public PedidoEncomienda(int idPedido, Direccion direccionEntrega, double distanciaKM, boolean fragil) {
+        super(idPedido, direccionEntrega, distanciaKM);
         this.fragil = fragil;
     }
 
@@ -22,19 +22,18 @@ public class PedidoEncomienda extends Pedido{
         this.fragil = fragil;
     }
 
-    // Sobreescritura
+    // Implementación del método abstracto
     @Override
-    public void asignarRepartidor(){
-        System.out.println("[Pedido Encomienda]");
-        System.out.println("Buscando un repartidor para llevar su encomienda rapidamente ✈️");
+    public int calcularTiempoEntrega(){
+        return (int) Math.round(20 + (1.5 * getDistanciaKM()));
     }
 
-    // Sobrecarga
-    public void asignarRepartidor(String nombreRepartidor){
-        System.out.print(nombreRepartidor + " llevará su(s) " + getTipoPedido());
-        if(isFragil()){
-            System.out.println(" frágil(es)");
-        }
-        System.out.println();
+    // Sobreescritura
+    @Override
+    public void mostrarResumen(){
+        System.out.println("Pedido Encomienda N°: " + getIdPedido());
+        System.out.println("Destino: " + getDireccionEntrega());
+        System.out.println("Distancia (km): " + getDistanciaKM());
+        System.out.println("Tiempo (min): " + calcularTiempoEntrega());
     }
 }

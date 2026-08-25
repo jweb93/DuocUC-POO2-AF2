@@ -8,8 +8,8 @@ public class PedidoExpress extends Pedido{
     private String comercio;
 
     // Constructor
-    public PedidoExpress(int idPedido, Direccion direccionEntrega, String tipoPedido, String comercio) {
-        super(idPedido, direccionEntrega, tipoPedido);
+    public PedidoExpress(int idPedido, Direccion direccionEntrega, double distanciaKM, String comercio) {
+        super(idPedido, direccionEntrega, distanciaKM);
         this.comercio = comercio; //Supermercado, Farmacia
     }
 
@@ -22,16 +22,23 @@ public class PedidoExpress extends Pedido{
         this.comercio = comercio;
     }
 
-    // Sobreescritura
+    // Implementación del método abstracto
     @Override
-    public void asignarRepartidor(){
-        System.out.println("[Pedido Express]");
-        System.out.println("Buscando un repartidor para llevar su pedido express 🧺");
+    public int calcularTiempoEntrega(){
+        if (getDistanciaKM() > 5){
+            return 15;
+        }
+        else{
+            return 10;
+        }
     }
 
-    // Sobrecarga
-    public void asignarRepartidor(String nombreRepartidor){
-        System.out.println(nombreRepartidor + " llevará su(s) " + getTipoPedido() + " de " + getComercio());
-        System.out.println("");
+    // Sobreescritura
+    @Override
+    public void mostrarResumen(){
+        System.out.println("Pedido Express N°: " + getIdPedido());
+        System.out.println("Destino: " + getDireccionEntrega());
+        System.out.println("Distancia (km): " + getDistanciaKM());
+        System.out.println("Tiempo (min): " + calcularTiempoEntrega());
     }
 }

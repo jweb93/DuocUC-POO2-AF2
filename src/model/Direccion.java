@@ -38,4 +38,9 @@ public class Direccion {
     public void setComuna(String comuna) {
         this.comuna = comuna;
     }
+
+    @Override
+    public String toString() {
+        return calle + ' ' + numero + ", " + comuna;
+    }
 }

@@ -11,18 +11,18 @@
 ---
 
 ## 📘 Descripción general del sistema
-Este proyecto da respuesta a la Actividad Formativa 1 de la asignatura 
+Este proyecto da respuesta a la Actividad Formativa 2 de la asignatura 
 *Desarrollo Orientado a Objetos II*. En la propuesta se desarrolla una 
-clase base (superclase) Pedido y 3 subclases PedidoComida, PedidoExpress,
- PedidoEncomienda; que sobreescriben el método asignarRepartidor y lo sobrecargan
-con atributos propios. Adicionalmente se implementa una clase Main que
-crea instancias de cada subclase y genera resultado en consola a partir
-de los métodos sobreescritos y sobrecargados de cada objeto creado.
+clase abstracta Pedido y 3 subclases PedidoComida, PedidoExpress,
+ PedidoEncomienda que implementan el método CalcularTiempoEntrega() 
+y sobreescriben el método base mostrarResumen(). Adicionalmente se implementa
+una clase Main que crea instancias de cada subclase y genera resultado en consola a partir
+de los métodos sobreescritos de cada objeto creado.
 
 El sistema creado se organiza en paquetes, aplica principios de herencia 
 (Pedido -> PedidoComida, PedidoExpress, PedidoEncomienda),
 composición (clase Dirección), encapsulamiento (atributos privados y 
-métodos getter/setter), polimorfismo (sobreescritura y sobrecarga de métodos)
+métodos getter/setter), polimorfismo (sobreescritura de métodos)
 y mantiene documentación de código usando Javadocs.
 
 ---

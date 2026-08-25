@@ -2,6 +2,8 @@ package ui;
 
 import model.*;
 
+import java.util.ArrayList;
+
 /**
  * Clase principal para ejecutar el programa
  */
@@ -9,33 +11,36 @@ import model.*;
 public class Main {
 
     public static void main(String[] args) {
-        PedidoComida pedido1 = new PedidoComida(
+        ArrayList<Pedido> pedidos = new ArrayList<>();
+
+        pedidos.add(new PedidoComida(
                 1,
                 new Direccion("Avenida Matta", 1042, "Santiago"),
-                "Completos",
-                true);
+                4,
+                true
+        ));
 
-        PedidoExpress pedido2 = new PedidoExpress(
+        pedidos.add(new PedidoEncomienda(
                 2,
-                new Direccion("Avenida Presidente Riesco", 777, "Las Condes"),
-                "Tapsin Día en polvo",
-                "Farmacia");
-
-        PedidoEncomienda pedido3 = new PedidoEncomienda(
-                3,
                 new Direccion("Avenida Central", 987, "Maipú"),
-                "Notebook",
-                true);
+                6,
+                true
+        ));
 
-        pedido1.asignarRepartidor();
-        pedido1.asignarRepartidor("Javier");
+        pedidos.add(new PedidoExpress(
+                3,
+                new Direccion("Avenida Presidente Riesco", 777, "Las Condes"),
+                7,
+                "Farmacia"
+        ));
 
-        pedido2.asignarRepartidor();
-        pedido2.asignarRepartidor("Ignacio");
 
-        pedido3.asignarRepartidor();
-        pedido3.asignarRepartidor("Nora");
 
+        for(Pedido p : pedidos){
+            System.out.println("--------------------------");
+            p.mostrarResumen();
+
+        }
 
     }
 }
